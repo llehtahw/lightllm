@@ -43,7 +43,6 @@ def _fwd_kernel_token_att2(
     return
 
 
-@torch.no_grad()
 def token_att_fwd2(prob, v, out, B_Loc, B_Start_Loc, B_Seqlen, max_input_len):
     if triton.__version__ >= "2.1.0":
         BLOCK = 128
@@ -110,7 +109,6 @@ def _fwd_kernel_token_att2_int8v(
     return
 
 
-@torch.no_grad()
 def token_att_fwd2_int8v(prob, v, v_scale, out, B_Loc, B_Start_Loc, B_Seqlen, max_input_len):
     if max_input_len < 512:
         BLOCK = triton.next_power_of_2(max_input_len)

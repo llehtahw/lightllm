@@ -48,7 +48,6 @@ def _fwd_kernel_token_att1(
     return
 
 
-@torch.no_grad()
 def token_att_fwd(q, k, att_out, B_Loc, B_Start_Loc, B_Seqlen, max_input_len):
     BLOCK = 32
     # shape constraints
@@ -124,7 +123,6 @@ def _fwd_kernel_token_att1_int8(
     return
 
 
-@torch.no_grad()
 def token_att_fwd_int8k(q, k, k_scale, att_out, B_Loc, B_Start_Loc, B_Seqlen, max_input_len):
     BLOCK = 32
     # shape constraints

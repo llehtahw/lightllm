@@ -32,7 +32,6 @@ def _fwd_kernel_token_softmax(
     return
 
 
-@torch.no_grad()
 def token_softmax_fwd(Logics, B_Start_Loc, B_Seqlen, Prob_Out, max_input_len):
     BLOCK_SIZE = triton.next_power_of_2(max_input_len)
     batch, head_num = B_Start_Loc.shape[0], Logics.shape[0]

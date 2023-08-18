@@ -45,7 +45,7 @@ def _rotary_kernel(
     return
 
 
-@torch.no_grad()
+# @torch.no_grad()
 def rotary_emb_fwd(q, cos, sin):
     total_len = q.shape[0]
     head_num = q.shape[1]
